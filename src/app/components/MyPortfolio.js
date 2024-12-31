@@ -11,7 +11,6 @@ const MyPortfolio = () => {
   const lines = [
     "Hello.",
     "I'm Ramddan Rosli.",
-    "I'm a freelance developer.",
     "I specialize in building modern and scalable applications.",
     "Looking to collaborate on exciting projects?",
     "Feel free to contact me.",
@@ -52,22 +51,27 @@ const MyPortfolio = () => {
           <div key={index} className="text-2xl md:text-4xl">
             {line}
             {index === currentLine - 1 && line === lines[lines.length - 1] && (
-              showCursor && <span className="ml-1">▋</span>
+              <span className="ml-1">{showCursor ? '▋' : ' '}</span>
             )}
           </div>
         ))}
         {currentLine < lines.length && (
           <div className="text-2xl md:text-4xl">
             {displayText}
-            {showCursor && <span className="ml-1">▋</span>}
+            <span className="ml-1">{showCursor ? '▋' : ' '}</span>
           </div>
         )}
 
         {currentLine === lines.length && (
-          <div className="fixed bottom-8 left-0 right-0 flex justify-center space-x-8 animate-fade-up opacity-0">
-            <a href="https://github.com/ramddan-rosli"target="_blank" className="text-lg hover:text-gray-400 transition-colors">GITHUB</a>
-            <a href="https://www.facebook.com/ramddan.rosli" target="_blank" className="text-lg hover:text-gray-400 transition-colors">FACEBOOK</a>
-            <a href="https://wa.me/60195000070?text=Hi Ramddan" target="_blank" className="text-lg hover:text-gray-400 transition-colors">WHATSAPP</a>
+          <div className="fixed bottom-8 left-0 right-0 flex flex-col items-center space-y-4 animate-fade-up opacity-0">
+            <div className="flex space-x-8">
+              <a href="https://github.com/ramddan-rosli" target="_blank" className="text-lg hover:text-gray-400 transition-colors">GITHUB</a>
+              <a href="https://www.facebook.com/ramddan.rosli" target="_blank" className="text-lg hover:text-gray-400 transition-colors">FACEBOOK</a>
+              <a href="https://wa.me/60195000070?text=Hi Ramddan" target="_blank" className="text-lg hover:text-gray-400 transition-colors">WHATSAPP</a>
+            </div>
+            {/* <div>
+              <a href="https://github.com/ramddan-rosli" target="_blank" className="text-lg hover:text-gray-400 transition-colors">MY PORTFOLIO</a>
+            </div> */}
           </div>
         )}
       </div>
